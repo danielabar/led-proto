@@ -81,7 +81,7 @@ The steps below explained what was changed to make this work.
 
 ### IMPORTANT
 
-This is a mock solution with no datastore backing it. The predefined users are hard-coded in [Users.js](models/User.js).
+This is a mock solution with no datastore backing it. The predefined users are hard-coded in [User.js](server/models/User.js).
 When new users are added via registration, they are 'persisted' in server memory by adding to the list of predefined users.
 The passwords are stored in plain text. When the server is restarted, all the registered users are gone. 
 A real solution would require a datastore to persist user information and a mechanism to hash the passwords.
