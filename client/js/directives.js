@@ -16,6 +16,7 @@ angular.module('led-proto')
     };
 }]);
 
+// This is not used for now
 angular.module('led-proto').directive('activeNav', ['$location', function(location) {
     return {
         restrict: 'A',
