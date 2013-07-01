@@ -15,9 +15,11 @@ var routes = [
         httpMethod: 'GET',
         middleware: [function (req, res) {
             console.log('partials req.url = ' + req.url);
-            var requestedView = path.join('./', req.url);
-            // res.render(requestedView);
-            res.render('partials/login.html');
+            // var requestedView = path.join('./', req.url);
+            var requestedView = req.url.slice(1, req.url.length) + '.html';
+            console.log('partials requestedView = ' + requestedView);
+            res.render(requestedView);
+            //res.render('partials/login.html');
         }],
         accessLevel: accessLevels.public
     },
