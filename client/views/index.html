@@ -22,7 +22,7 @@
     <body>
 
 	  <!-- FIXME: Need Anon vs Logged In View of Nav: can we have multiple ng-view in a single html file? -->
-      <div class="navbar navbar-inverse navbar-fixed-top">
+      <div ng-controller="LoginCtrl" class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container">
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -32,9 +32,9 @@
             </button>
             <a class="brand" href="#"><img src="http://placehold.it/190x50" alt="Ledita Logo" class="img-rounded"/></a>
             <div class="nav-collapse collapse">
-              <form action="ldlist.html" method="get" class="navbar-form pull-right">
-                <input class="span2" type="email" placeholder="Email" required="">
-                <input class="span2" type="password" placeholder="Password" required="">
+              <form ng-submit="login()" class="navbar-form pull-right">
+                <input ng-model="username" class="span2" type="text" placeholder="Email" required="">
+                <input ng-model="password" class="span2" type="password" placeholder="Password" required="">
                 <button type="submit" class="btn">Login</button>
               </form>
             </div><!--/.nav-collapse -->
