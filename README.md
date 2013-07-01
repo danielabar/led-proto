@@ -78,3 +78,10 @@ The steps below explained what was changed to make this work.
 * Register with server side validation error
 
     * Follow instructions as for registering a new user, but enter a password with less than 5 characters    
+
+### IMPORTANT
+
+This is a mock solution with no datastore backing it. The predefined users are hard-coded in [Users.js](models/User.js).
+When new users are added via registration, they are 'persisted' in server memory by adding to the list of predefined users.
+The passwords are stored in plain text. When the server is restarted, all the registered users are gone. 
+A real solution would require a datastore to persist user information and a mechanism to hash the passwords.
