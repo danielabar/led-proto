@@ -41,6 +41,12 @@ angular.module('led-proto')
     $scope.loginOauth = function(provider) {
         $window.location.href = '/auth/' + provider;
     };
+
+    // Experiment - get register function here
+    // $scope.register = function() {
+    //     console.log('register function is called on client side');
+    // };
+
 }]);
 
 angular.module('led-proto')

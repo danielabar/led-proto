@@ -4,9 +4,12 @@ var passport =  require('passport')
 module.exports = {
     register: function(req, res, next) {
         try {
+            console.log('register function called on server side, about to validate User');
             User.validate(req.body);
+            console.log('register function on server side passed validation - YAY');
         }
         catch(err) {
+            console.log('register function on server side failed validation - BOO HOO');
             return res.send(400, err.message);
         }
 

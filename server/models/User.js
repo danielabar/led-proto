@@ -28,6 +28,7 @@ var users = [
 //FIXME: In real app, user registration function will write to datastore
 module.exports = {
     addUser: function(username, password, role, callback) {
+        console.log('addUser function is called on server side');
         if(this.findByUsername(username) !== undefined)  return callback("UserAlreadyExists");
 
         // Clean up when 500 users reached
@@ -80,7 +81,9 @@ module.exports = {
     validate: function(user) {
         check(user.username, 'Username must be 1-20 characters long').len(1, 20);
         check(user.password, 'Password must be 5-60 characters long').len(5, 60);
-        check(user.username, 'Invalid username').not(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/);
+
+        // this app is using email address as user name so must allow '@', for simplicity, just disable this validation for now
+        // check(user.username, 'Invalid username').not(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/);
 
         // TODO: Seems node-validator's isIn function doesn't handle Number arrays very well...
         // Till this is rectified Number arrays must be converted to string arrays
