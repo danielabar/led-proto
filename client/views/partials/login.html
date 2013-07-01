@@ -5,16 +5,18 @@
     <p>In ultricies commodo est quis varius. Aenean metus orci, convallis a libero eu, pharetra mattis nisi. Donec vulputate convallis sapien a scelerisque. Aliquam consequat feugiat hendrerit. Aliquam ac lectus sit amet sapien accumsan congue a ut massa. In suscipit mi id mi pellentesque, non posuere turpis molestie. </p>
   </div>
   <div class="span6">
+
+    <!-- The RegisterCtrl is specified here because this partial also has login form in top nav
+          and the route provides it with LoginCtrl. Perhaps a better way would be to combine the Login
+          and Registration functions into a single controller specified in the route, then don't need it here -->
     <div ng-controller="RegisterCtrl" class="login-border">
       <form ng-submit="register()" class="form-horizontal">
         <fieldset>
 
           <legend id="signUpHeader">Sign Up</legend>
 
-          <!-- <alert id="registrationErrors" ng-show="alertMsg" type="alertType" close="closeAlert()">{{ alertMsg }}</alert> -->
-          <!-- Try the native bootstrap alert instead, the angular-ui one seems to want repeater of alerts, one in each box -->
-          <div id="registrationErrors"  ng-show="alertMsg" class="alert alert-error">
-            <button type="button" class="close" data-dismiss="alert">&times;</button> <!-- FIXME: need to also clear alertMsg from scope -->
+          <div id="registrationErrors" ng-show="alertMsg" class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             {{ alertMsg }}
           </div>
 

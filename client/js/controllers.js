@@ -53,9 +53,6 @@ angular.module('led-proto')
 angular.module('led-proto')
 .controller('RegisterCtrl',
 ['$rootScope', '$scope', '$location', 'Auth', function($rootScope, $scope, $location, Auth) {
-
-    $scope.alertMsg = null;
-
     $scope.role = routingConfig.userRoles.user;
 
     $scope.register = function() {
@@ -65,6 +62,7 @@ angular.module('led-proto')
                 role: $scope.role
             },
             function(res) {
+                $scope.alertMsg = null; // clear the error message on successful registration
                 $rootScope.user = res;
                 $location.path('/');
             },
