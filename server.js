@@ -7,6 +7,8 @@ var express =       require('express')
 var app = express();
 
 app.set('views', __dirname + '/client/views');
+app.engine('html', require('jade').renderFile);
+app.set('view engine', 'jade');
 app.engine('html', require('ejs').renderFile);
 app.use(express.logger('dev'))
 app.use(express.cookieParser());

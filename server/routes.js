@@ -14,8 +14,10 @@ var routes = [
         path: '/partials/*',
         httpMethod: 'GET',
         middleware: [function (req, res) {
+            console.log('partials req.url = ' + req.url);
             var requestedView = path.join('./', req.url);
-            res.render(requestedView);
+            // res.render(requestedView);
+            res.render('partials/login.html');
         }],
         accessLevel: accessLevels.public
     },
@@ -115,6 +117,7 @@ var routes = [
         path: '/*',
         httpMethod: 'GET',
         middleware: [function(req, res) {
+            console.log('all other req.url = ' + req.url);
             var role = userRoles.public, username = '';
             if(req.user) {
                 role = req.user.role;

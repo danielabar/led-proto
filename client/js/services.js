@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angular-client-side-auth')
+angular.module('led-proto')
 .factory('Auth', function($http, $rootScope, $cookieStore){
 
     var accessLevels = routingConfig.accessLevels
@@ -44,7 +44,7 @@ angular.module('angular-client-side-auth')
     };
 });
 
-angular.module('angular-client-side-auth')
+angular.module('led-proto')
 .factory('Users', function($http) {
     return {
         getAll: function(success, error) {
