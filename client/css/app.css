@@ -70,6 +70,14 @@ legend {
 	padding-left: 15px;
 }
 
+#signUpHeader {
+	padding-top: 20px;
+}
+
+#registrationErrors {
+	margin-right: 20px;
+}
+
 .ld-grid {
 	margin-left: 0px;
 }

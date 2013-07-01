@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('led-proto', ['ngCookies'])
+angular.module('led-proto', ['ngCookies', 'ui.bootstrap'])
 
     .config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
 

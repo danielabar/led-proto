@@ -9,10 +9,15 @@
       <form ng-submit="register()" class="form-horizontal">
         <fieldset>
 
-          <!-- Form Name -->
-          <legend>Sign Up</legend>
+          <legend id="signUpHeader">Sign Up</legend>
 
-          <!-- Text input-->
+          <!-- <alert id="registrationErrors" ng-show="alertMsg" type="alertType" close="closeAlert()">{{ alertMsg }}</alert> -->
+          <!-- Try the native bootstrap alert instead, the angular-ui one seems to want repeater of alerts, one in each box -->
+          <div id="registrationErrors"  ng-show="alertMsg" class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">&times;</button> <!-- FIXME: need to also clear alertMsg from scope -->
+            {{ alertMsg }}
+          </div>
+
           <div class="control-group">
             <div class="controls">
               <input id="firstName" name="firstName" type="text" placeholder="Name" class="input-xlarge" required="" />
@@ -25,28 +30,24 @@
             </div>
           </div>
 
-          <!-- Text input-->
           <div class="control-group">
             <div class="controls">
               <input ng-model="username" type="email" placeholder="E-mail" class="input-xlarge" required="" />
             </div>
           </div>
 
-          <!-- Password input-->
           <div class="control-group">
             <div class="controls">
               <input ng-model="password" type="password" placeholder="Password" class="input-xlarge" required="" />
             </div>
           </div>
 
-          <!-- Password input-->
           <div class="control-group">
             <div class="controls">
               <input type="password" placeholder="Retype Password" class="input-xlarge" required="" />
             </div>
           </div>
 
-          <!-- Checkbox (inline) -->
           <div class="control-group">
             <div class="controls">
               <label class="checkbox">

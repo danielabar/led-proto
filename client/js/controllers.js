@@ -42,11 +42,6 @@ angular.module('led-proto')
         $window.location.href = '/auth/' + provider;
     };
 
-    // Experiment - get register function here
-    // $scope.register = function() {
-    //     console.log('register function is called on client side');
-    // };
-
 }]);
 
 angular.module('led-proto')
@@ -58,6 +53,9 @@ angular.module('led-proto')
 angular.module('led-proto')
 .controller('RegisterCtrl',
 ['$rootScope', '$scope', '$location', 'Auth', function($rootScope, $scope, $location, Auth) {
+
+    $scope.alertMsg = null;
+
     $scope.role = routingConfig.userRoles.user;
 
     $scope.register = function() {
@@ -71,9 +69,10 @@ angular.module('led-proto')
                 $location.path('/');
             },
             function(err) {
-                $rootScope.error = err;
+                $scope.alertMsg = err;
             });
     };
+
 }]);
 
 angular.module('led-proto')
